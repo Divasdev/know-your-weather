@@ -19,7 +19,8 @@ body {
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
    overflow-x: hidden;
-   /* prevent horizontal overflow on small devices */
+   padding: 10px 0;
+   /* Add padding for safety */
 }
 
 /* Make the card width responsive */
@@ -27,7 +28,8 @@ body {
    width: min(92vw, 620px);
    /* responsive width */
    max-width: 620px;
-   min-height: 520px;
+   min-height: auto;
+   /* Let content define height */
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -192,48 +194,63 @@ button {
 }
 
 /* Mobile-specific tweaks */
+/* Mobile-specific tweaks */
 @media (max-width: 600px) {
    #container {
-      width: 94vw;
+      width: 95%;
+      /* Almost full width */
+      height: auto;
+      /* Let content dictate height */
       min-height: auto;
-      /* let content define height */
-      border-radius: 14px;
-      padding: 18px;
+      padding: 20px;
+      margin: 20px auto;
+      /* Center it with spacing */
       justify-content: flex-start;
    }
 
    .search-box {
       margin-top: 10px;
+      width: 100%;
    }
 
    .temp {
-      font-size: clamp(3rem, 12vw, 6rem);
+      font-size: 4.5rem;
+      /* Fixed smaller size for mobile */
+      line-height: 1;
    }
 
    .type {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
    }
 
    .details {
       flex-direction: column;
-      /* Stack them vertically for safety */
-      gap: 10px;
-      margin-top: 22px;
+      /* FORCE vertical stack */
+      flex-wrap: nowrap;
+      gap: 15px;
+      margin-top: 30px;
+      width: 100%;
    }
 
    .col {
       width: 100%;
-      /* Full width */
+      /* Full width cards */
+      min-width: 0;
+      /* Override any min-width */
       flex: none;
+      /* Disable flex scaling */
+      padding: 15px;
    }
 
    .weather-icon {
-      width: clamp(70px, 28vw, 110px);
+      width: 100px;
    }
 
    .footer {
       position: relative;
-      margin-top: 18px;
+      margin-top: 30px;
+      bottom: auto;
+      padding-bottom: 10px;
    }
 }
 
