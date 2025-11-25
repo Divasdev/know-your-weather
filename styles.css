@@ -182,16 +182,7 @@ button {
    height: auto;
 }
 
-.footer {
-   position: absolute;
-   bottom: 8px;
-   text-align: center;
-   width: 100%;
-   color: rgba(0, 0, 0, 0.6);
-   font-size: 1rem;
-   font-family: sans-serif;
-   pointer-events: none;
-}
+
 
 /* Mobile responsive design */
 @media (max-width: 600px) {
