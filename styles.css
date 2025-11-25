@@ -193,70 +193,64 @@ button {
    pointer-events: none;
 }
 
-/* Mobile-specific tweaks */
-/* Mobile-specific tweaks */
+/* Mobile responsive design */
 @media (max-width: 600px) {
+   body {
+      align-items: flex-start;
+      padding: 10px 0;
+   }
+
    #container {
-      width: 95%;
-      /* Almost full width */
-      height: auto;
-      /* Let content dictate height */
+      width: 90%;
+      margin: 10px auto;
+      padding: 20px 15px;
       min-height: auto;
-      padding: 20px;
-      margin: 20px auto;
-      /* Center it with spacing */
-      justify-content: flex-start;
    }
 
    .search-box {
-      margin-top: 10px;
-      width: 100%;
+      margin-bottom: 20px;
+   }
+
+   #weather-info {
+      flex-direction: column;
    }
 
    .temp {
-      font-size: 4.5rem;
-      /* Fixed smaller size for mobile */
-      line-height: 1;
+      font-size: 4rem;
    }
 
    .type {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+   }
+
+   .city {
+      font-size: 1rem;
    }
 
    .details {
       flex-direction: column;
-      /* FORCE vertical stack */
-      flex-wrap: nowrap;
-      gap: 15px;
-      margin-top: 30px;
-      width: 100%;
+      gap: 12px;
+      margin-top: 20px;
    }
 
    .col {
       width: 100%;
-      /* Full width cards */
-      min-width: 0;
-      /* Override any min-width */
+      min-width: 100%;
       flex: none;
-      /* Disable flex scaling */
-      padding: 15px;
    }
 
    .weather-icon {
-      width: 100px;
+      width: 80px;
    }
 
    .footer {
       position: relative;
-      margin-top: 30px;
-      bottom: auto;
-      padding-bottom: 10px;
+      margin-top: 20px;
    }
 }
 
-/* Help ensure images never overflow their containers */
+/* Prevent image overflow */
 img {
    max-width: 100%;
    height: auto;
-   display: block;
 }
