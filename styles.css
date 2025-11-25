@@ -1,20 +1,31 @@
 /* Reset-ish and helpful defaults */
-*{ box-sizing: border-box; }
-html,body{ height:100%; margin:0; padding:0; }
+* {
+   box-sizing: border-box;
+}
+
+html,
+body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+
 body {
    min-height: 100vh;
    display: flex;
    align-items: center;
    justify-content: center;
    background: radial-gradient(circle at top, #b7d7ff 0%, #8ab7ff 30%, #6d8eea 60%, #5b6fd9 100%);
-   -webkit-font-smoothing:antialiased;
-   -moz-osx-font-smoothing:grayscale;
-   overflow-x: hidden; /* prevent horizontal overflow on small devices */
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   overflow-x: hidden;
+   /* prevent horizontal overflow on small devices */
 }
 
 /* Make the card width responsive */
 #container {
-   width: min(92vw, 620px); /* responsive width */
+   width: min(92vw, 620px);
+   /* responsive width */
    max-width: 620px;
    min-height: 520px;
    display: flex;
@@ -26,7 +37,8 @@ body {
    border: 1px solid rgba(255, 255, 255, 0.25);
    -webkit-backdrop-filter: blur(20px);
    backdrop-filter: blur(20px);
-   padding: 28px 22px; /* slightly reduced to help small screens */
+   padding: 28px 22px;
+   /* slightly reduced to help small screens */
    border-radius: 22px;
    color: whitesmoke;
    position: relative;
@@ -117,7 +129,8 @@ button {
    gap: 14px;
    margin-top: 40px;
    width: 100%;
-   flex-wrap: wrap; /* allow wrapping on small screens */
+   flex-wrap: wrap;
+   /* allow wrapping on small screens */
 }
 
 .col {
@@ -132,8 +145,10 @@ button {
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   min-width: 140px; /* smaller min width helps wrapping */
-   flex: 1 1 140px; /* allow shrink/grow */
+   min-width: 140px;
+   /* smaller min width helps wrapping */
+   flex: 1 1 140px;
+   /* allow shrink/grow */
    gap: 10px;
 }
 
@@ -154,8 +169,16 @@ button {
    margin-bottom: 6px;
 }
 
-.weekday { display:flex; align-items:center; text-align:center; }
-.imgs { width: 100%; max-width: 400px; }
+.weekday {
+   display: flex;
+   align-items: center;
+   text-align: center;
+}
+
+.imgs {
+   width: 40px;
+   height: auto;
+}
 
 .footer {
    position: absolute;
@@ -172,38 +195,51 @@ button {
 @media (max-width: 600px) {
    #container {
       width: 94vw;
-      min-height: auto; /* let content define height */
+      min-height: auto;
+      /* let content define height */
       border-radius: 14px;
       padding: 18px;
       justify-content: flex-start;
    }
 
-   .search-box { margin-top: 10px; }
+   .search-box {
+      margin-top: 10px;
+   }
 
-   .temp { font-size: clamp(3rem, 12vw, 6rem); }
-   .type { font-size: 1.4rem; }
+   .temp {
+      font-size: clamp(3rem, 12vw, 6rem);
+   }
+
+   .type {
+      font-size: 1.4rem;
+   }
 
    .details {
+      flex-direction: column;
+      /* Stack them vertically for safety */
       gap: 10px;
       margin-top: 22px;
    }
 
    .col {
-      min-width: 120px;
-      padding: 12px;
-      flex: 1 1 45%; /* two columns on small screens */
+      width: 100%;
+      /* Full width */
+      flex: none;
    }
 
-   /* make the large pressure card span full width */
-   .col.full-width {
-      flex-basis: 100%;
-      min-width: 100%;
+   .weather-icon {
+      width: clamp(70px, 28vw, 110px);
    }
 
-   .weather-icon { width: clamp(70px, 28vw, 110px); }
-
-   .footer { position: relative; margin-top: 18px; }
+   .footer {
+      position: relative;
+      margin-top: 18px;
+   }
 }
 
 /* Help ensure images never overflow their containers */
-img { max-width: 100%; height: auto; display: block; }
+img {
+   max-width: 100%;
+   height: auto;
+   display: block;
+}
